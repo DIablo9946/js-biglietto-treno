@@ -1,11 +1,11 @@
 var elemento = document.getElementById("mio_id");
 
 // Chiedo all'utente il numero di chilometri da percorrere
-var distanzadaper = prompt("Indica i chilometri da percorrere");
+var distanzadaper = parseInt(prompt("Indica i chilometri da percorrere"));
 console.log(distanzadaper);
 
 // Chiedo l'eta del cliente
-var etacliente = prompt("Quanti anni hai?");
+var etacliente = parseInt(prompt("Quanti anni hai?"));
 console.log(etacliente);
 
 // Il prezzo del percorso
@@ -14,26 +14,23 @@ console.log(prezzoper);
 
 
 // Stabilisco lo sconto per minorenni
-var scontomin = etacliente <= 18;
+var scontomin = etacliente < 18;
 console.log(scontomin);
 
 
 // Stablilisco lo sconto per gli anziani
-var scontoanz = etacliente >= 65;
+var scontoanz = etacliente > 65;
 console.log(scontoanz);
 
 // Calcolo il prezzo del blilietto al cliente
 if (scontomin){
   risultato = prezzoper * 0.8;
 }
-else {
-  risultato = prezzoper;
-}
 
-if (scontoanz) {
+else if (scontoanz) {
   risultato = prezzoper * 0.6;
 }
- else {
+else {
    risultato = prezzoper;
  }
 
