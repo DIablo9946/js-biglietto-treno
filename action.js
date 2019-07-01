@@ -8,9 +8,9 @@ console.log(distanzadaper);
 var etacliente = prompt("Quanti anni hai?");
 console.log(etacliente);
 
-// Stabilisco il prezzo del Biglietto
-var prezzobliglietto = distanzadaper * etacliente;
-console.log(prezzobliglietto);
+// Il prezzo del percorso
+var prezzoper = distanzadaper * 0.21;
+console.log(prezzoper);
 
 
 // Stabilisco lo sconto per minorenni
@@ -23,3 +23,23 @@ var scontoanz = etacliente >= 65;
 console.log(scontoanz);
 
 // Calcolo il prezzo del blilietto al cliente
+if (scontomin){
+  risultato = prezzoper * 0.8;
+}
+else {
+  risultato = prezzoper;
+}
+
+if (scontoanz) {
+  risultato = prezzoper * 0.6;
+}
+ else {
+   risultato = prezzoper;
+ }
+
+
+
+ // Stampo i risultati
+
+
+elemento.innerHTML = risultato;
